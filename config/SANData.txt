@@ -1,0 +1,45 @@
+###############
+## This is a data file for SAN elements. The format is very specific for CLI Automation
+## All data will be verified either for value, pattern or blank/null
+## Blank values are assigned space in this data file
+## Each record will have a key property which will be used for identification of the record
+## Key properties for various records are
+##
+##
+## Host Command                                    Primary Key
+##
+## appiqshow -device -host 1013                    Name
+## appiqshow -device -host 1013 -hba               HBAWWN
+## appiqshow -device -host 1013 -port              WWN
+## appiqshow -device -host 1013 -targetmapping     TargetLUNID
+## appiqshow -device -host 1013 -logicaldisk       Caption
+## appiqshow -device -host 1013 -partition         Caption
+## appiqshow -device -host 1013 -diskdrive         Caption
+## appiqshow -device -host 1013 -volume            Caption
+##
+## Switch Commands
+## appiqshow -device -switch 1010
+## appiqshow -device -switch 1010 -port
+## appiqshow -device -switch 1010 -zone
+## appiqshow -device -switch 1010 -zoneset
+##
+## Storage Commands
+## appiqshow -device -storagesystem <elementid>
+## appiqshow -device -storagesystem <elementid> -port
+## appiqshow -device -storagesystem <elementid> -hostsecuritygroup
+## appiqshow -device -storagesystem <elementid> -pool
+## appiqshow -device -storagesystem <elementid> -volume
+## appiqshow -device -storagesystem <elementid> -extent
+## appiqshow -device -storagesystem <elementid> -drive
+##############
+command???appiqshow -device -host <elementid>
+RHEL5-IA64!!!properties:::ID===1013,,,Type===Host,,,Name===RHL5-IA64,,,Contacted===2007-12-12 10:07,,,RecordCreated===2007-12-12 09:20,,,DiscoveryStatus===Contacted,,,isManaged===true,,,Caption===RHEL5-IA64,,,Description===Red Hat Enterprise Linux Server release 5 (Tikanga),,,BUILDNUMBER===28,,,MINORVERSION===0,,,SUPPORTSMULTITHREADEDFSRM===true,,,SYNCHRONIZERMODE===parent,,,MAJORVERSION===6,,,SERVICEPACK===,,,SMALLVERSION===0,,,HostType===Default,,,CustomName===,,,InstallDate===,,,IPAddress===16.180.169.11,,,DNSName===16.180.169.11,,,Model===ia64,,,SerialNumber===,,,PrimaryOwnerName===,,,PrimaryOwnerContact===,,,Version===2.6.18-8.el5,,,Vendor===,,,OS===LINUX,,,TotalPhysicalMemory(MBytes)===3,904,,,SupportsFRSM===true,,,SupportFlags===3
+-----
+command???appiqshow -device -host <elementid> -hba
+RHEL5-IA64!!!hba:::ID===1059,,,Type===HBACard,,,Name===Adapter 0,,,Contacted===2007-12-12 10:07,,,RecordCreated===2007-12-12 09:22,,,DiscoveryStatus===Contacted,,,isManaged===true,,,Caption===Adapter 0,,,Description===Adapter 0,,,Device===Host:1013:RHEL5-IA64,,,HBAWWN===5001438000ac4ec9,,,CustomName===,,,InstallDate===,,,Vendor===QLogic Corporation,,,DriverVersion===v.8.01.07-k1,,,FirmwareVersion===v.4.00.23 [IP],,,Model===QMH2462,,,SerialNumber===I37710,,,Version===CU0410401-01  D
+RHEL5-IA64!!!hba:::ID===1061,,,Type===HBACard,,,Name===Adapter 1,,,Contacted===2007-12-12 10:07,,,RecordCreated===2007-12-12 09:22,,,DiscoveryStatus===Contacted,,,isManaged===true,,,Caption===Adapter 1,,,Description===Adapter 1,,,Device===Host:1013:RHEL5-IA64,,,HBAWWN===5001438000ac4ecb,,,CustomName===,,,InstallDate===,,,Vendor===QLogic Corporation,,,DriverVersion===v.8.01.07-k1,,,FirmwareVersion===v.4.00.23 [IP],,,Model===QMH2462,,,SerialNumber===I38222,,,Version===CU0410401-01  D
+-----
+command???appiqshow -device -host <elementid> -port
+RHEL5-IA64!!!port:::ID===1068,,,Type===FCPort,,,Name===Adapter 0 Port 0,,,Contacted===2007-12-12 10:07,,,RecordCreated===2007-12-12 09:22,,,DiscoveryStatus===Contacted,,,isManaged===true,,,Caption===Adapter 0 Port 0,,,Description===Adapter 0 Port 0,,,Device===Host:1013:RHEL5-IA64,,,CustomName===dhana,,,PortType===N,,,SymbolicName===,,,State===Online,,,PhysicalState===,,,Status===,,,PortSpeed===0 Gb/s,,,MaximumSpeed===0 Gb/s,,,LinkTechnology===,,,PortID===65796,,,PortNumber===0,,,WWN===5001438000ac4ec8,,,WWNofConnectedPort===200100051e059541,,,WWNofConnectedNode===
+RHEL5-IA64!!!port:::ID===1077,,,Type===FCPort,,,Name===Adapter 1 Port 0,,,Contacted===2007-12-12 10:07,,,RecordCreated===2007-12-12 09:22,,,DiscoveryStatus===Contacted,,,isManaged===true,,,Caption===Adapter 1 Port 0,,,Description===Adapter 1 Port 0,,,Device===Host:1013:RHEL5-IA64,,,CustomName===,,,PortType===,,,SymbolicName===,,,State===LinkDown,,,PhysicalState===,,,Status===,,,PortSpeed===0 Gb/s,,,MaximumSpeed===0 Gb/s,,,LinkTechnology===,,,PortID===88,,,PortNumber===0,,,WWN===5001438000ac4eca,,,WWNofConnectedPort===,,,WWNofConnectedNode===
+-----
