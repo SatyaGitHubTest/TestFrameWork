@@ -1,13 +1,15 @@
 # This class reads hosts config file
 
-import re 
+import re
+from testcases import logger
 
 class HostsData:
   """ this is host class which reads hosts.conf file
       and create host objects """
-  
   hosts = {}
   def __init__ (self, filename='../config/host_list.conf'):
+    
+    logger.critical("process hosts properties")
     with open(filename, mode="r") as fd:
         for line in fd:
           if (line == "\n"):
@@ -17,4 +19,4 @@ class HostsData:
           temp = line.split(':')
           self.hosts[temp[0]] = temp[1]
         else:
-          print("finished processing host file") 
+          logger.critical("finished processing host file") 
