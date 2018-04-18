@@ -10,5 +10,5 @@ handler1.setFormatter(frmt)
 handler2.setFormatter(frmt)
 logger.addHandler(handler1)
 logger.addHandler(handler2)
-logger.info("logger in __init__ .py file")
+logger.info("logger initialized in __init__ .py file")
 
