@@ -1,4 +1,0 @@
-2018-04-12 17:22:25,991 - testcases - INFO - logger in __init__ .py file
-2018-04-12 17:22:25,997 - testcases - INFO - ----- logger initialized -----
-2018-04-12 17:22:25,998 - testcases - CRITICAL - process hosts properties
-2018-04-12 17:22:25,999 - testcases - CRITICAL - finished processing host file
