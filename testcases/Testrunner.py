@@ -19,6 +19,7 @@ from common.readtestcases import *
 from common.readproperties import *
 from common.remoteclient import *
 
+'''
 #logger = logging.getLogger()
 logger.info('----- Starting test runner -----')
 
@@ -38,7 +39,14 @@ for key, value in propty.properties.items():
     logger.info ("property {} and its value is {}".format(key, propty.properties[key]))
 try:
   client1 = RemoteClient(hostname='192.168.1.10',port = '22', username = 'vagrant', key_file = None, password='vagrant') 
-  out = client1.ex_cmd('ls -al')
-  print(out)
+  out = client1.ex_cmd('ls')
+  out = client1.put('./readme', '/home/vagrant/readme')
+  if out == 0: logger.error('put failed')
+'''
+client1 = RemoteClient(hostname='192.168.1.10',port = '22', username = 'vagrant', key_file = None, password='vagrant')
+# out = client1.put_all(os.path.abspath('./config'), '/home/vagrant/config')
+out = client1.get_all('/home/vagrant', '.')     
+'''
 except TimeoutError:
     logger.error('SSH timeout for -- {}'.format('hostname'))
+'''

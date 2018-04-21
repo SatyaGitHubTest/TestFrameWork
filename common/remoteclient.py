@@ -3,6 +3,7 @@ import paramiko
 import socket
 import os
 from testcases import logger
+import stat
 
 class RemoteClient(object):
     # Usage:
@@ -79,12 +80,21 @@ class RemoteClient(object):
 
     def put(self,localfile,remotefile):
         #  Copy localfile to remotefile, overwriting or creating as needed.
-        self.sftp.put(localfile,remotefile)
-
+        if os.path.isfile(localfile): print("file exists")
+        if os.path.isfile(localfile):
+            self.sftp.put(localfile,remotefile)
+        else:
+            return 0
     def put_all(self,localpath,remotepath):
         #  recursively upload a full directory
         os.chdir(os.path.split(localpath)[0])
         parent=os.path.split(localpath)[1]
+        print(os.walk(parent))
+        os.wal
+        (root, dirnames, filenames) = os.walk(parent)
+        print (root)
+        print(dirnames)
+        print(filenames)
         for walker in os.walk(parent):
             try:
                 self.sftp.mkdir(os.path.join(remotepath,walker[0]))
@@ -105,7 +115,7 @@ class RemoteClient(object):
         files=[]
         folders=[]
         for f in self.sftp.listdir_attr(remotepath):
-            if S_ISDIR(f.st_mode):
+            if stat.S_ISDIR(f.st_mode):
                 folders.append(f.filename)
             else:
                 files.append(f.filename)
@@ -144,6 +154,5 @@ class RemoteClient(object):
         self.sftp.chmod(remotefile,755)
     def ex_cmd(self, cmd):
         stdin, stdout, stderr = self.sshclient.exec_command(cmd)
-    #    print(stdout.read())
         logger.info('stdout for {} --> '.format(cmd))
         logger.info(stdout.readlines())
